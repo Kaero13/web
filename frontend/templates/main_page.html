@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                Video Editor
+            </a>
+
+            <div class="main-nav">
+                <a href="{{ url_for('index') }}" class="nav-link active">Главная</a>
+                <a href="@" class="nav-link">Скачать</a>
+            </div>
+
+            <div class="auth-buttons">
+                <a href="{{ url_for('login') }}" class="login-btn">Войти</a>
+                <a href="#" class="register-btn">Регистрация</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="hero">
+            <h1>Редактируй как бог</h1>
+            <p style="color: #ccc; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+                Ну почти... Зато бесплатно и без подписок.
+            </p>
+        </div>
+
+        <!-- Тут будет основной контент -->
+        {% block content %}
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='images/2b.png') }}"
+                alt="Скриншот программы"
+                class="feature-image">
+            </div>
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Video Editor. Все права защищены. <span style="color: #888;">(ну почти)</span></p>
+    </footer>
+</body>
+</html>
